@@ -10,16 +10,19 @@ public class TestWordCounter {
 
   // TODO complete this test class
 
-  // TODO declare a reference to the SUT (system under test), i.e., WordCounter
+  // DONE declare a reference to the SUT (system under test), i.e., WordCounter
+  WordCounter counter;
 
   @Before
   public void setUp() {
-    // TODO create the SUT instance
-  }
+    // DONE create the SUT instance
+    Map<String, Integer> testMap = new HashMap<String, Integer>();
+    counter = new WordCounter(testMap);
 
   @After
   public void tearDown() {
-    // TODO set the SUT instance to null
+    // DONE set the SUT instance to null
+    counter = null;
   }
 
   @Test
