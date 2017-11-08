@@ -28,6 +28,16 @@ public class Main {
     entryList.addAll(counter.getCounts().entrySet()); // 5
     
     Collections.sort(entryList, new DescendingByCount()); // 6
+    
+    if (counter.getCounts().size() <= 10) { // 7
+      for (int j = 0; j < counter.getCounts().size(); j++) {
+        System.out.println(entryList.get(j));
+      } 
+    } else {
+      for (int j = 0; j < 10; j++) {
+        System.out.println(entryList.get(j));
+      }
+    }
 
   }
 }
