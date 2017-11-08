@@ -2,6 +2,9 @@ package edu.luc.cs271.wordcount;
 
 import static org.junit.Assert.*;
 
+import java.util.Map;
+import java.util.HashMap;
+import java.util.Collections;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -18,6 +21,7 @@ public class TestWordCounter {
     // DONE create the SUT instance
     Map<String, Integer> testMap = new HashMap<String, Integer>();
     counter = new WordCounter(testMap);
+  }
 
   @After
   public void tearDown() {
@@ -29,7 +33,7 @@ public class TestWordCounter {
   public void testGetCountEmpty() {
 
     // TODO verify that the SUT initially returns an empty map
-    fail();
+    assertEquals(counter.getCounts(), Collections.emptyMap());
 
   }
 
