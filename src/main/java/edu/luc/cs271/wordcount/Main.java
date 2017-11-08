@@ -20,6 +20,14 @@ public class Main {
     // 7. print the (up to) ten most frequent words in the text
     Map<String, Integer> map = new HashMap<String, Integer>(); // 1
     WordCounter counter = new WordCounter(map);
+    
+    counter.countWords(input); // 2
+    
+    int size = counter.getCounts().size(); // 3
+    ArrayList<Map.Entry<String, Integer>> entryList = new ArrayList<>(size); // 4
+    entryList.addAll(counter.getCounts().entrySet()); // 5
+    
+    Collections.sort(entryList, new DescendingByCount()); // 6
 
   }
 }
