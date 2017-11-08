@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Collections;
+import java.util.Arrays;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -40,10 +41,15 @@ public class TestWordCounter {
   @Test
   public void testGetCountNonEmpty() {
 
-    // TODO run the SUT on a specific String iterator with some repeated words,
+    // DONE run the SUT on a specific String iterator with some repeated words,
     // then use assertions to verify the correct counts
     // do this for at least two words in the iterator and two not in the iterator
-    fail();
+    counter.countWords(Arrays.asList("It", "was", "a", "dark", "and", "stormy", "night", "dark", "stormy", "night").iterator());
 
+    //test fails, look over
+    assertEquals(counter.getCount("dark"), 2);
+    assertEquals(counter.getCount("was"), 1);
+    assertEquals(counter.getCount("light"), 0);
+    assertEquals(counter.getCount("day"), 0);
   }
 }
